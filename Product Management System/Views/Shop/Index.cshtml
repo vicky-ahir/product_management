@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Product_Management_System.Models.Admin.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+
+
+    .product {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 20px;
+        text-align: center;
+        height: 280px;
+    }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .product strong {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .product p {
+            margin-bottom: 5px;
+        }
+
+        .product button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .product button:hover {
+                background-color: #0056b3;
+            }
+</style>
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-2">
+            <div class="product" onclick="viewProductDetails(@product.Product_Id)">
+                <img src="@Url.Content(product.Product_Cover_Image)" class="img-fluid" alt="Product Image" />
+                <strong>@product.Product_Name</strong>
+                <p>@product.Product_Description</p>
+                <p>Price: $@product.Product_Price</p>
+            </div>
+        </div>
+    }
+</div>

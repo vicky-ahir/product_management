@@ -1,0 +1,337 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Product Management System.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Product Management System.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\Images\\03408d20fa734d2aa56cfe821c9f69f9.jpeg",
+      "PackagePath": "staticwebassets\\Images\\03408d20fa734d2aa56cfe821c9f69f9.jpeg"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\Images\\0c2617c2b0de40b297de0ef98f0e1162.jpeg",
+      "PackagePath": "staticwebassets\\Images\\0c2617c2b0de40b297de0ef98f0e1162.jpeg"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\Images\\1.png.jpg",
+      "PackagePath": "staticwebassets\\Images\\1.png.jpg"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\Images\\17f7368074cd482d9ad11234dff28a31.png",
+      "PackagePath": "staticwebassets\\Images\\17f7368074cd482d9ad11234dff28a31.png"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\Images\\2.png.jpg",
+      "PackagePath": "staticwebassets\\Images\\2.png.jpg"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\Images\\475adc25401e4f33a04ae02557dd9604.jpeg",
+      "PackagePath": "staticwebassets\\Images\\475adc25401e4f33a04ae02557dd9604.jpeg"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\Images\\4865129ca38347ebab50dd473e2770af.jpeg",
+      "PackagePath": "staticwebassets\\Images\\4865129ca38347ebab50dd473e2770af.jpeg"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\Images\\523456d7950c4c70b2a0a7f9749618c4.jpeg",
+      "PackagePath": "staticwebassets\\Images\\523456d7950c4c70b2a0a7f9749618c4.jpeg"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\Images\\5338684f67d345a4935ae61accde19b6.jpeg",
+      "PackagePath": "staticwebassets\\Images\\5338684f67d345a4935ae61accde19b6.jpeg"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\Images\\6821f9f1b62d42e99bb4a06296fd0afb.png",
+      "PackagePath": "staticwebassets\\Images\\6821f9f1b62d42e99bb4a06296fd0afb.png"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\Images\\6f87e25548cd4bf193f88f9ef1ea5ecb.png",
+      "PackagePath": "staticwebassets\\Images\\6f87e25548cd4bf193f88f9ef1ea5ecb.png"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\Images\\7ead84df82ed40f490f679e32e5efa42.png",
+      "PackagePath": "staticwebassets\\Images\\7ead84df82ed40f490f679e32e5efa42.png"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\Images\\875e1f53398f45398eda0de923e3b109.png",
+      "PackagePath": "staticwebassets\\Images\\875e1f53398f45398eda0de923e3b109.png"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\Images\\bdbdc4c3c65240349144ba5a08eb9eae.jpeg",
+      "PackagePath": "staticwebassets\\Images\\bdbdc4c3c65240349144ba5a08eb9eae.jpeg"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\Images\\d93cbcef61334e20b83350cf96987ea3.jpeg",
+      "PackagePath": "staticwebassets\\Images\\d93cbcef61334e20b83350cf96987ea3.jpeg"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\Images\\f780e59f435c456bbb9a8ae7c8a9aa03.png",
+      "PackagePath": "staticwebassets\\Images\\f780e59f435c456bbb9a8ae7c8a9aa03.png"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\css\\product.css",
+      "PackagePath": "staticwebassets\\css\\product.css"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\css\\user.css",
+      "PackagePath": "staticwebassets\\css\\user.css"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\Freelance\\product_management\\Product Management System\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Product Management System.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Product Management System.props",
+      "PackagePath": "build\\Product Management System.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Product Management System.props",
+      "PackagePath": "buildMultiTargeting\\Product Management System.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Product Management System.props",
+      "PackagePath": "buildTransitive\\Product Management System.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

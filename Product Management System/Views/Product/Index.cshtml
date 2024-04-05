@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Product_Management_System.Models.Admin.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<link href="~/css/product.css" rel="stylesheet" />
+
+<style>
+    img {
+        max-width: 100px;
+        max-height: 100px;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 5px;
+    }
+</style>
+
+<h1>Index</h1>
+
+<div class="add-product-btn">
+    <a asp-action="AddProduct"><i class="fa fa-plus"></i> Create New</a>
+</div>
+<table class="table" id="productList">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Images)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product_Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product_Price)
+                </td>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.Product_Images))
+                    {
+                        string[] imagePaths = item.Product_Images.Split(',');
+                        foreach (var imagePath in imagePaths)
+                        {
+                            <img src="~/@imagePath" alt="Product Image" />
+                        }
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product_Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product_Status)
+                </td>
+                <td>
+                    <a asp-action="EditProduct" asp-route-id="@item.Product_Id" id="btnEdit" class="btn bg-white text-primary" title="Edit Product"><i class="fa fa-edit fw-bold"></i></a>
+                    <a asp-action="DetailProduct" asp-route-id="@item.Product_Id" id="btnView" class="btn bg-white text-primary" title="View Product"><i class="fa fa-eye fw-bold"></i></a>
+                    <a href="#" onclick="deleteProduct(@item.Product_Id)" id="btnDelete" class="btn bg-white text-primary" title="Delete Product"><i class="fa fa-trash fw-bold"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
