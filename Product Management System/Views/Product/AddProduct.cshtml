@@ -26,7 +26,6 @@
                 title: 'Success',
                 text: '@ViewBag.success_message'
             }).then((result) => {
-                debugger
                 if (result.isConfirmed) {
                     window.location.href = "/Product/Index"
                 }
@@ -40,7 +39,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Add Product</h5>
+                    <h5 class="card-title text-center addCardTitle">Add Product</h5>
                     <hr>
                     @using (Html.BeginForm("AddProduct", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
                     {
@@ -48,41 +47,47 @@
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label class="control-label">Product Name</label>
-                                <input asp-for="Product_Name" class="form-control" />
+                                <input asp-for="Product_Name" class="form-control" placeholder="Enter Product Name" />
                                 <span asp-validation-for="Product_Name" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Product Description</label>
-                                <input asp-for="Product_Description" class="form-control" />
+                                <input asp-for="Product_Description" class="form-control" placeholder="Enter Product Description" />
                                 <span asp-validation-for="Product_Description" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Product Price</label>
-                                <input asp-for="Product_Price" class="form-control" />
+                                <input asp-for="Product_Price" class="form-control" placeholder="Enter Product Price" />
                                 <span asp-validation-for="Product_Price" class="text-danger"></span>
                             </div>
-                            <div class="form-group">
-                                <label class="control-label">Product Cover Image</label>
-                                <input asp-for="Cover_Image" class="form-control" />
-                                <span asp-validation-for="Cover_Image" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">Product Images</label>
-                                <input asp-for="Images" class="form-control" />
-                                <span asp-validation-for="Images" class="text-danger"></span>
+                            <div class="row">
+                                <div class="form-group col-6">
+                                    <label class="control-label">Product Cover Image</label>
+                                    <input asp-for="Cover_Image" class="form-control" type="file" accept="image/*" />
+                                    <span asp-validation-for="Cover_Image" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label class="control-label">Product Images</label>
+                                    <input asp-for="Images" class="form-control" />
+                                    <span asp-validation-for="Images" class="text-danger"></span>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Product Quantity</label>
-                                <input asp-for="Product_Quantity" class="form-control" value="0" />
+                                <input asp-for="Product_Quantity" class="form-control" value="0" placeholder="Enter Product Quantity" />
                                 <span asp-validation-for="Product_Quantity" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Product Status</label>
-                                <input asp-for="Product_Status" class="form-control" value="0" />
+                                <input asp-for="Product_Status" class="form-control" value="0" placeholder="Enter Product Status" />
                                 <span asp-validation-for="Product_Status" class="text-danger"></span>
                             </div>
-                            <div class="form-group">
-                                <input type="submit" value="Create" class="btn btn-primary" />
+                            <div class="text-center text-lg-start mt-4 pt-2 d-flex flex-column">
+                                <div class="d-flex justify-content-center">
+                                    <input type="submit" value="Add" class="btn btn-primary btnAddProduct" />
+                                    <button class="mx-2 btn btn-secondary btnBackProduct" asp-action="Index">Back to List</button>
+
+                                </div>
                             </div>
                         </form>
                     }
@@ -90,11 +95,6 @@
             </div>
         </div>
     </div>
-</div>
-
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

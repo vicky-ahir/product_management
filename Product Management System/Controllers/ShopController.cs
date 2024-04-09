@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Product_Management_System.Models;
 using Product_Management_System.Services.Admin;
 
 namespace Product_Management_System.Controllers
 {
+    [Authentication]
     public class ShopController : Controller
     {
         private readonly IProductService _productService;

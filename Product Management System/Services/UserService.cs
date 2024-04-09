@@ -22,5 +22,25 @@ namespace Product_Management_System.Services
         {
             return await _userRepository.GetUserDetail(email,password);
         }
+
+        public async Task<User> GetUserDetailById(int user_Id)
+        {
+            return await _userRepository.GetUserDetailById(user_Id);
+        }
+
+        public async Task<bool> EditUserDetail(User user)
+        {
+            return await _userRepository.EditUserDetail(user);
+        }
+
+        public async Task<IEnumerable<User>> GetAllUsers()
+        {
+            return await _userRepository.GetAllUsers();
+        }
+
+        public async Task<bool> DeleteUserDetail(int user_Id)
+        {
+            return await _userRepository.DeleteUserDetail(user_Id);
+        }
     }
 }

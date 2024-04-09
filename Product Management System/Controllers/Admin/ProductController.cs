@@ -7,7 +7,7 @@ using Product_Management_System.Services.Admin;
 
 namespace Product_Management_System.Controllers.Admin
 {
-    [Authentication]
+    [Admin_Authentication]
     public class ProductController : Controller
     {
         private readonly IProductService _productService;
@@ -131,6 +131,27 @@ namespace Product_Management_System.Controllers.Admin
                     }
                 }
                 return Json(false);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> DetailProduct(int Id)
+        {
+            try
+            {
+                var result = await _productService.GetProductById(Id);
+                if (result != null)
+                {
+                    return View(result);
+                }
+                else
+                {
+                    return NotFound();
+                }
             }
             catch (Exception e)
             {

@@ -15,11 +15,23 @@
     margin-right: 15px;
 }
 
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+.addCardTitle {
+    color: #060688 !important;
+    letter-spacing: 3px;
+    font-weight: 700 !important;
 }
 
+.btnAddProduct {
+    background-color: darkblue;
+    width: 25%;
+    border-radius: 50px;
+}
+
+.btnBackProduct {
+    background-color: #5c5c5c;
+    width: 25%;
+    border-radius: 50px;
+}
 
 .editImage {
     max-width: 100px;
@@ -98,6 +110,29 @@
             color: #fff;
         }
 
+.listCoverImage {
+    max-width: 100px;
+    max-height: 100px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+table tr.odd, .table-hover > tbody > tr:hover {
+    background-color: #EDF1F5 !important;
+}
+
+table tr td {
+    border: none !important;
+}
+
+
+table thead tr th {
+    background-color: #EDF1F5 !important;
+    border-top: 1px solid !important;
+}
+
 .fa {
     font-size: 16px;
 }
@@ -113,3 +148,92 @@
 .fa-trash{
     color:red !important;
 }
+
+/*Shop details css */
+.carousel-item {
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-fade .carousel-item {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    z-index: 1;
+}
+
+    .carousel-fade .carousel-item.active {
+        opacity: 1;
+    }
+
+.product-details {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+
+.action-links a {
+    margin-right: 10px;
+}
+
+
+.btn-buyNow {
+    background-color: #ff4601db;
+    color: white !important;
+    font-weight: 600;
+    border-radius: 50px;
+    width: 25%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-addCart {
+    background-color: yellow !important;
+    color: black !important;
+    font-weight: 600;
+    border-radius: 50px;
+    width: 25%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/*Shop Page Css */
+
+.product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    height: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+    .product img {
+        max-width: 200px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+
+    .product strong {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .product p {
+        margin-bottom: 5px;
+    }
+
+    .product button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 8px 25px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        border-radius:25px;
+    }
+
+        .product button:hover {
+            background-color: #0056b3;
+        }

@@ -25,7 +25,6 @@ else if (!string.IsNullOrEmpty(ViewBag.success_message))
                 title: 'Success',
                 text: '@ViewBag.success_message'
             }).then((result) => {
-                debugger
                 if (result.isConfirmed) {
                     window.location.href = "/Product/Index"
                 }
@@ -36,10 +35,13 @@ else if (!string.IsNullOrEmpty(ViewBag.success_message))
 @{
     string[] imagePaths = null;
     string jsImagePaths = null;
-    if (string.IsNullOrEmpty(ViewBag.success_message) && string.IsNullOrEmpty(ViewBag.success_message))
+    if (Model != null)
     {
-        imagePaths = Model.Product_Images.Split(',');
-        jsImagePaths = string.Join(",", imagePaths.Select(x => "'" + x + "'"));
+        if (!string.IsNullOrEmpty(Model.Product_Images))
+        {
+            imagePaths = Model.Product_Images.Split(',');
+            jsImagePaths = string.Join(",", imagePaths.Select(x => "'" + x + "'"));
+        }
     }
 }
 <link href="~/css/product.css" rel="stylesheet" />
@@ -49,7 +51,7 @@ else if (!string.IsNullOrEmpty(ViewBag.success_message))
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Edit Product</h5>
+                    <h5 class="card-title text-center addCardTitle">Edit Product</h5>
                     <hr>
                     @using (Html.BeginForm("EditProduct", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
                     {
@@ -71,19 +73,36 @@ else if (!string.IsNullOrEmpty(ViewBag.success_message))
                                 <span asp-validation-for="Product_Price" class="text-danger"></span>
                             </div>
                             <div class="form-group">
-                                <label asp-for="Product_Images" class="control-label"></label><br/>
-                                <input type="hidden" id="Product_Images" asp-for="Product_Images" class="control-label" value="@Model.Product_Images"></input>
-                                @if (!string.IsNullOrEmpty(Model.Product_Images))
+                                <label asp-for="Product_Cover_Image" class="control-label"></label><br />
+                                @if (Model != null)
                                 {
-                                    @* string[] imagePaths = Model.Product_Images.Split(','); *@
-                                    int imagesCount = imagePaths.Length;
-
-                                    foreach (var imagePath in imagePaths)
+                                    @if (!string.IsNullOrEmpty(Model.Product_Cover_Image))
                                     {
+                                        <input type="hidden" id="Product_Cover_Image" asp-for="Product_Cover_Image" class="control-label" value="@Model.Product_Cover_Image" />
                                         <div class="image-container">
-                                            <img src="~/@imagePath" class="editImage" alt="Product Image" />
-                                            <button type="button" class="close-button" onclick="removeImage('@imagePath')">&times;</button>
+                                            <img id="imagePreview" src="~/@Model.Product_Cover_Image" class="editImage" alt="Product Image" />
                                         </div>
+                                    }
+                                }
+                                <input asp-for="Cover_Image" onchange="coverImageUpload(event)" class="form-control" />
+                                <span asp-validation-for="Product_Cover_Image" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Product_Images" class="control-label"></label><br />
+                                @if (Model != null)
+                                {
+                                    @if (!string.IsNullOrEmpty(Model.Product_Images) && imagePaths != null)
+                                    {
+                                        <input type="hidden" id="Product_Images" asp-for="Product_Images" class="control-label" value="@Model.Product_Images" />
+
+                                        int imagesCount = imagePaths.Length;
+                                        foreach (var imagePath in imagePaths)
+                                        {
+                                            <div class="image-container">
+                                                <img src="~/@imagePath" class="editImage" alt="Product Image" />
+                                                <button type="button" class="close-button" onclick="removeImage('@imagePath')">&times;</button>
+                                            </div>
+                                        }
                                     }
                                 }
                                 <input asp-for="Images" class="form-control" />
@@ -99,8 +118,12 @@ else if (!string.IsNullOrEmpty(ViewBag.success_message))
                                 <input asp-for="Product_Status" class="form-control" />
                                 <span asp-validation-for="Product_Status" class="text-danger"></span>
                             </div>
-                            <div class="form-group">
-                                <input type="submit" value="Save" class="btn btn-primary" />
+                            <div class="text-center text-lg-start mt-4 pt-2 d-flex flex-column">
+                                <div class="d-flex justify-content-center">
+                                    <input type="submit" value="Save" class="btn btn-primary btnAddProduct" />
+                                    <button class="mx-2 btn btn-secondary btnBackProduct" asp-action="Index">Back to List</button>
+
+                                </div>
                             </div>
                         </form>
                     }
@@ -110,9 +133,6 @@ else if (!string.IsNullOrEmpty(ViewBag.success_message))
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 <script>
     var imagePaths = [@Html.Raw(jsImagePaths)];
     function removeImage(imgPath) {
@@ -124,7 +144,22 @@ else if (!string.IsNullOrEmpty(ViewBag.success_message))
                 $('#Product_Images').val(updatedProductImages);
                 $('.image-container:eq(' + index + ')').remove();
             }
-        });        
+        });
+    }
+
+    function coverImageUpload(event) {
+        const fileInput = event.target;
+        const imagePreview = document.getElementById('imagePreview');
+        if (event && event.target && event.target.files) {
+            var selectedFile = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                imagePreview.src = event.target.result;
+            };
+            reader.readAsDataURL(selectedFile);
+        } else {
+            console.error('Invalid event or file input.');
+        }
     }
 </script>
 

@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 namespace Product_Management_System.Models
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true, Inherited = true)]
-    public class Authentication : Attribute, IAuthorizationFilter
+    public class Admin_Authentication : Attribute, IAuthorizationFilter
     {
         public void OnAuthorization(AuthorizationFilterContext actionContext)
         {
@@ -14,10 +14,10 @@ namespace Product_Management_System.Models
             if (userJson != null)
             {
                 user = JsonConvert.DeserializeObject<User>(userJson);
-                if (user != null && (user.User_Type == 0 || user.User_Type == 1))
+                if (user != null && user.User_Type == 1)
                 {
-                    actionContext.HttpContext.Response.Headers.Add("UserAuthStatus", "Authorized");
-                    actionContext.HttpContext.Response.Headers.Add("UserstoreAccessiblity", "Authorized");
+                    actionContext.HttpContext.Response.Headers.Add("AuthStatus", "Authorized");
+                    actionContext.HttpContext.Response.Headers.Add("storeAccessiblity", "Authorized");
                     return;
                 }
                 else

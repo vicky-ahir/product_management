@@ -81,6 +81,7 @@ namespace Product_Management_System.Controllers
         }
 
         [HttpGet]
+        [Admin_Authentication]
         [Authentication]
         public async Task<IActionResult> SignOut()
         {
