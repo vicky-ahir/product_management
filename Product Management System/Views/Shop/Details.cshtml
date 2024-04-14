@@ -4,6 +4,56 @@
     ViewData["Title"] = "Details";
 }
 <link href="~/css/product.css" rel="stylesheet" />
+
+<style>
+    .input-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3), 4px 7px 15px rgba(0, 0, 0, 0.2), 9px 15px 25px rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+        max-width: 250px;
+    }
+
+    button,
+    input {
+        outline: none;
+        border: none;
+        padding: 5px;
+        font-size: 20px;
+        background-color: #fff !important;
+        border: none !important;
+    }
+
+    input {
+        width: 100%;
+        text-align: center;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    #increment {
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    #decrement {
+        border-bottom-left-radius: 15px;
+        border-top-left-radius: 15px;
+    }
+
+    #increment:active {
+        box-shadow: inset -4px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #decrement:active {
+        box-shadow: inset 4px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+</style>
+
 @{
     string coverImagePath = Url.Content("~/" + @Model.Product_Cover_Image);
     string[] otherImagePaths = Model.Product_Images.Split(',');
@@ -56,9 +106,16 @@
                         <dt class="col-sm-4">Product Price:</dt>
                         <dd class="col-sm-8">@Html.DisplayFor(model => model.Product_Price)</dd>
                     </dl>
+                    <div class="row d-flex justify-content-center">
+                        <div class="input-group">
+                            <button id="decrement" type="button" onclick="decrementQuantity()">-</button>
+                            <input id="quantityInput" class="form-control" value="1" min="1" readonly>
+                            <button id="increment" type="button" onclick="incrementQuantity()">+</button>
+                        </div>
+                    </div>
                     <div class="action-links d-flex justify-content-center mt-4">
-                        <a href="#" class="btn btn-addCart"><i class="fa fa-solid fa-cart-plus"></i> Add to Cart</a>
-                        <a href="#" class="btn btn-buyNow"><i class="fa  fa-shopping-cart"></i> Buy Now</a>
+                        <button class="btn btn-addCart" onclick="addToCart(@Model.Product_Id)"><i class="fa fa-solid fa-cart-plus"></i> Add to Cart</button>
+                        <a href="#" class="btn btn-buyNow mx-3"><i class="fa  fa-shopping-cart"></i> Buy Now</a>
                     </div>
                 </div>
             </div>
@@ -71,6 +128,20 @@
     setInterval(function () {
         $('#productCarousel').carousel('next');
     }, 3000);
+
+
+    function incrementQuantity() {
+        var quantityInput = document.getElementById('quantityInput');
+        quantityInput.value = parseInt(quantityInput.value) + 1;
+    }
+
+    function decrementQuantity() {
+        var quantityInput = document.getElementById('quantityInput');
+        var value = parseInt(quantityInput.value);
+        if (value > 1) {
+            quantityInput.value = value - 1;
+        }
+    }
 </script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

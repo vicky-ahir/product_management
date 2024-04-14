@@ -33,6 +33,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
             <div class="container-fluid">
+                <a class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/logo1-removebg-preview.png" style="cursor:pointer; height: 40px;width: auto;background-position: center;background-size: cover;" /></a>
                 <a class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Index">Electronique Emporium</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -64,6 +65,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" asp-action="Index" asp-controller="Admin">Customers</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-action="Index" asp-controller="Orders">Orders</a>
+                            </li>
                         </ul>
                         <form class="d-flex">
                             <a class="me-2" asp-action="SignOut" asp-controller="user"><img class="btnlogout" src="~/images/logout.png" /></a>
@@ -79,6 +83,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/Shop">Shop</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Cart">Cart</a>
                             </li>
                         </ul>
                         <form class="d-flex">
@@ -97,7 +104,7 @@
 
     <footer class="border-top footer text-muted text-center fixed-bottom">
         <div class="container mt-3">
-            &copy; @DateTime.Now.Year.ToString() - Product Management System - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; @DateTime.Now.Year.ToString() - Electronique Emporium - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

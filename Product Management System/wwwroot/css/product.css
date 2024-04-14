@@ -231,7 +231,7 @@ table thead tr th {
         padding: 8px 25px;
         cursor: pointer;
         transition: background-color 0.3s;
-        border-radius:25px;
+        border-radius: 25px;
     }
 
         .product button:hover {

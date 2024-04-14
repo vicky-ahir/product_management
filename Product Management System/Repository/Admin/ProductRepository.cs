@@ -5,6 +5,7 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using Microsoft.AspNetCore.Hosting;
 using System.Reflection.Metadata;
+using Product_Management_System.Models;
 
 namespace Product_Management_System.Repository.Admin
 {
@@ -216,5 +217,133 @@ namespace Product_Management_System.Repository.Admin
                 return false;
             }
         }
+
+
+        public async Task<bool> addToCart(int user_Id, int product_Id, int quantity)
+        {
+            try
+            {
+                var parameter = new DynamicParameters();
+                parameter.Add("@User_Id", user_Id, DbType.Int64, ParameterDirection.Input);
+                parameter.Add("@Product_Id", product_Id, DbType.Int64, ParameterDirection.Input);
+                parameter.Add("@Quantity", quantity, DbType.Int64, ParameterDirection.Input);
+                parameter.Add("@sp_operation", "INSERT", DbType.String, ParameterDirection.Input);
+
+                using (IDbConnection connection = GetDbConnection())
+                {
+                    await ((DbConnection)connection).OpenAsync();
+                    await connection.ExecuteAsync("sp_Cart_Details", parameter, commandType: CommandType.StoredProcedure);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+
+        public async Task<IEnumerable<Cart>> cartDetails(int Id)
+        {
+            try
+            {
+                var parameter = new DynamicParameters();
+
+                parameter.Add("@User_Id", Id, DbType.Int64, ParameterDirection.Input);
+                parameter.Add("@sp_operation", "SELECT", DbType.String, ParameterDirection.Input);
+                using (IDbConnection connection = GetDbConnection())
+                {
+                    await ((DbConnection)connection).OpenAsync();
+                    var result = await connection.QueryAsync<Cart>("sp_Cart_Details", parameter, commandType: CommandType.StoredProcedure);
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+        public async Task<bool> removeCart(int cart_Id)
+        {
+            try
+            {
+                var parameter = new DynamicParameters();
+
+                parameter.Add("@Cart_Id", cart_Id, DbType.Int32, ParameterDirection.Input);
+                parameter.Add("@sp_operation", "DELETE", DbType.String, ParameterDirection.Input);
+                using (IDbConnection connection = GetDbConnection())
+                {
+                    await ((DbConnection)connection).OpenAsync();
+                    await connection.ExecuteAsync("sp_Cart_Details", parameter, commandType: CommandType.StoredProcedure);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public async Task<bool> changeQuantity(int cart_Id,int quantity)
+        {
+            try
+            {
+                var parameter = new DynamicParameters();
+
+                parameter.Add("@Cart_Id", cart_Id, DbType.Int32, ParameterDirection.Input);
+                parameter.Add("@Quantity", quantity, DbType.Int32, ParameterDirection.Input);
+                parameter.Add("@sp_operation", "UPDATE", DbType.String, ParameterDirection.Input);
+                using (IDbConnection connection = GetDbConnection())
+                {
+                    await ((DbConnection)connection).OpenAsync();
+                    await connection.ExecuteAsync("sp_Cart_Details", parameter, commandType: CommandType.StoredProcedure);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public async Task<bool> proceedToBuy(string cart_Ids)
+        {
+            try
+            {
+                var parameter = new DynamicParameters();
+                parameter.Add("@Cart_Ids", cart_Ids, DbType.String, ParameterDirection.Input);
+                using (IDbConnection connection = GetDbConnection())
+                {
+                    await ((DbConnection)connection).OpenAsync();
+                    await connection.ExecuteAsync("sp_Order_Completed", parameter, commandType: CommandType.StoredProcedure);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+
+        public async Task<IEnumerable<Order>> GetAllOrders()
+        {
+            try
+            {
+                using (IDbConnection connection = GetDbConnection())
+                {
+                    await ((DbConnection)connection).OpenAsync();
+                    var result = await connection.QueryAsync<Order>("sp_Get_Order_Details", null, commandType: CommandType.StoredProcedure);
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
     }
 }

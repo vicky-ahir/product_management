@@ -14,13 +14,13 @@
                 type: 'POST',
                 data: { product_Id: product_Id },
                 success: function (response) {
-                    if(response === true) {
+                    if (response === true) {
                         Swal.fire({
                             title: "Deleted!",
                             text: "Product has been deleted.",
                             icon: "success"
                         }).then(() => {
-                            location.reload(); 
+                            location.reload();
                         });
                     } else {
                         Swal.fire({
@@ -28,7 +28,7 @@
                             text: "Something went wrong.",
                             icon: "error"
                         });
-                    }                
+                    }
                 },
                 error: function (error) {
                     Swal.fire({
@@ -67,8 +67,7 @@ $(document).ready(function () {
 });
 
 
-function viewProductDetails(Id)
-{
+function viewProductDetails(Id) {
     window.location.href = `Shop/Details?Id=${Id}`;
 }
 
@@ -113,6 +112,60 @@ function deleteUser(User_Id) {
                         icon: "error"
                     });
                 }
+            });
+        }
+    });
+}
+
+
+function addToCart(product_Id) {
+    var quantityInput = document.getElementById('quantityInput');
+    var quantityvalue = parseInt(quantityInput.value);
+    $.ajax({
+        url: 'addToCart',
+        type: 'POST',
+        data: { product_Id: product_Id, quantity: quantityvalue },
+        success: function (response) {
+            if (response === true) {
+                Swal.fire({
+                    title: "Success!",
+                    text: ''+ product.Product_Name +' has been add to cart.',
+                    icon: "success"
+                }).then(() => {
+                    location.reload();
+                });
+            } else {
+                Swal.fire({
+                    title: "Error!",
+                    text: "Something went wrong.",
+                    icon: "error"
+                });
+            }
+        },
+        error: function (error) {
+            Swal.fire({
+                title: "Error!",
+                text: "Something went wrong.",
+                icon: "error"
+            });
+        }
+    });
+}
+
+
+function removeCart(cart_Id) {
+    $.ajax({
+        url: 'Cart/RemoveFromCart',
+        type: 'POST',
+        data: { Id: cart_Id},
+        success: function (response) {
+            window.location.reload();
+        },
+        error: function (error) {
+            Swal.fire({
+                title: "Error!",
+                text: "Something went wrong.",
+                icon: "error"
             });
         }
     });

@@ -1,4 +1,5 @@
-﻿using Product_Management_System.Models.Admin;
+﻿using Product_Management_System.Models;
+using Product_Management_System.Models.Admin;
 using Product_Management_System.Repository.Admin;
 
 namespace Product_Management_System.Services.Admin
@@ -37,5 +38,34 @@ namespace Product_Management_System.Services.Admin
             return await _productRepository.DeleteProductDetails(product_Id);
         }
 
+        public async Task<bool> addToCart(int user_Id, int product_Id, int quantity)
+        {
+            return await _productRepository.addToCart(user_Id,product_Id, quantity);
+        }
+
+        public async Task<IEnumerable<Cart>> cartDetails(int Id)
+        {
+            return await _productRepository.cartDetails(Id);
+        }
+
+        public async Task<bool> removeCart(int cart_Id)
+        {
+            return await _productRepository.removeCart(cart_Id);
+        }
+
+        public async Task<bool> changeQuantity(int cart_Id, int quantity)
+        {
+            return await _productRepository.changeQuantity(cart_Id,quantity);
+        }
+
+        public async Task<bool> proceedToBuy(string cart_Ids)
+        {
+            return await _productRepository.proceedToBuy(cart_Ids);
+        }
+
+        public async Task<IEnumerable<Order>> GetAllOrders()
+        {
+            return await _productRepository.GetAllOrders();
+        }
     }
 }
