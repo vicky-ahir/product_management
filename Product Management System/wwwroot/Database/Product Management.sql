@@ -366,3 +366,11 @@ USE [master]
 GO
 ALTER DATABASE [Product Management] SET  READ_WRITE 
 GO
+
+
+
+
+USE [Product Management]
+
+INSERT INTO dbo.[User] (Firstname, Lastname, Birthdate, Gender, Email, Phonenumber, [Password], Is_Deleted,User_Type)    
+	  VALUES ('Kevin','Gadhiya','1994-02-07 00:00:00.000',1,'kevin.gadhiya@gmail.com','8569475861','123456', 0,1)
