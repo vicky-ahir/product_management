@@ -36,7 +36,6 @@ namespace Product_Management_System.Controllers
                 else
                 {
                     ViewBag.success_message = "Register successfully!";
-                    HttpContext.Session.SetString("User", user.ToString());
                 }
                 return View();
             }

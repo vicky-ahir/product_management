@@ -129,7 +129,7 @@ function addToCart(product_Id) {
             if (response === true) {
                 Swal.fire({
                     title: "Success!",
-                    text: ''+ product.Product_Name +' has been add to cart.',
+                    text: 'This product has been add to cart.',
                     icon: "success"
                 }).then(() => {
                     location.reload();
