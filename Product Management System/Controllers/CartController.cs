@@ -73,5 +73,21 @@ namespace Product_Management_System.Controllers
             }
         }
 
+        public async Task<IActionResult> UserOrder()
+        {
+            try
+            {
+                string userJson = HttpContext.Session.GetString("User");
+                var user = new User();
+                user = JsonConvert.DeserializeObject<User>(userJson);
+                var result = await _productService.GetUserOrder(user.User_Id);
+                return View(result);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
     }
 }

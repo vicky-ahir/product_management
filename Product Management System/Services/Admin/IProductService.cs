@@ -26,5 +26,7 @@ namespace Product_Management_System.Services.Admin
         Task<bool> proceedToBuy(string cart_Ids);
 
         Task<IEnumerable<Order>> GetAllOrders();
+
+        Task<IEnumerable<Cart>> GetUserOrder(int User_Id);
     }
 }

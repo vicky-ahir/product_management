@@ -1,41 +1,44 @@
 USE [Product Management]
 GO
-/****** Object:  StoredProcedure [dbo].[sp_UserLogin]    Script Date: 18-04-2024 08:44:22 AM ******/
+/****** Object:  StoredProcedure [dbo].[sp_UserLogin]    Script Date: 19-04-2024 10:31:11 PM ******/
 DROP PROCEDURE [dbo].[sp_UserLogin]
 GO
-/****** Object:  StoredProcedure [dbo].[sp_UserDetails]    Script Date: 18-04-2024 08:44:22 AM ******/
+/****** Object:  StoredProcedure [dbo].[sp_UserDetails]    Script Date: 19-04-2024 10:31:11 PM ******/
 DROP PROCEDURE [dbo].[sp_UserDetails]
 GO
-/****** Object:  StoredProcedure [dbo].[sp_Product_Details]    Script Date: 18-04-2024 08:44:22 AM ******/
+/****** Object:  StoredProcedure [dbo].[sp_Product_Details]    Script Date: 19-04-2024 10:31:11 PM ******/
 DROP PROCEDURE [dbo].[sp_Product_Details]
 GO
-/****** Object:  StoredProcedure [dbo].[sp_Order_Completed]    Script Date: 18-04-2024 08:44:22 AM ******/
+/****** Object:  StoredProcedure [dbo].[sp_Order_Completed]    Script Date: 19-04-2024 10:31:11 PM ******/
 DROP PROCEDURE [dbo].[sp_Order_Completed]
 GO
-/****** Object:  StoredProcedure [dbo].[sp_Get_Order_Details]    Script Date: 18-04-2024 08:44:22 AM ******/
+/****** Object:  StoredProcedure [dbo].[sp_Get_User_Order_Details]    Script Date: 19-04-2024 10:31:11 PM ******/
+DROP PROCEDURE [dbo].[sp_Get_User_Order_Details]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_Get_Order_Details]    Script Date: 19-04-2024 10:31:11 PM ******/
 DROP PROCEDURE [dbo].[sp_Get_Order_Details]
 GO
-/****** Object:  StoredProcedure [dbo].[sp_Cart_Details]    Script Date: 18-04-2024 08:44:22 AM ******/
+/****** Object:  StoredProcedure [dbo].[sp_Cart_Details]    Script Date: 19-04-2024 10:31:11 PM ******/
 DROP PROCEDURE [dbo].[sp_Cart_Details]
 GO
-/****** Object:  Table [dbo].[User]    Script Date: 18-04-2024 08:44:22 AM ******/
+/****** Object:  Table [dbo].[User]    Script Date: 19-04-2024 10:31:11 PM ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[User]') AND type in (N'U'))
 DROP TABLE [dbo].[User]
 GO
-/****** Object:  Table [dbo].[Product]    Script Date: 18-04-2024 08:44:22 AM ******/
+/****** Object:  Table [dbo].[Product]    Script Date: 19-04-2024 10:31:11 PM ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Product]') AND type in (N'U'))
 DROP TABLE [dbo].[Product]
 GO
-/****** Object:  Table [dbo].[Cart]    Script Date: 18-04-2024 08:44:22 AM ******/
+/****** Object:  Table [dbo].[Cart]    Script Date: 19-04-2024 10:31:11 PM ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Cart]') AND type in (N'U'))
 DROP TABLE [dbo].[Cart]
 GO
 USE [master]
 GO
-/****** Object:  Database [Product Management]    Script Date: 18-04-2024 08:44:22 AM ******/
+/****** Object:  Database [Product Management]    Script Date: 19-04-2024 10:31:11 PM ******/
 DROP DATABASE [Product Management]
 GO
-/****** Object:  Database [Product Management]    Script Date: 18-04-2024 08:44:22 AM ******/
+/****** Object:  Database [Product Management]    Script Date: 19-04-2024 10:31:11 PM ******/
 CREATE DATABASE [Product Management]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -115,7 +118,7 @@ ALTER DATABASE [Product Management] SET QUERY_STORE = OFF
 GO
 USE [Product Management]
 GO
-/****** Object:  Table [dbo].[Cart]    Script Date: 18-04-2024 08:44:23 AM ******/
+/****** Object:  Table [dbo].[Cart]    Script Date: 19-04-2024 10:31:11 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -133,7 +136,7 @@ CREATE TABLE [dbo].[Cart](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Product]    Script Date: 18-04-2024 08:44:23 AM ******/
+/****** Object:  Table [dbo].[Product]    Script Date: 19-04-2024 10:31:11 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -154,7 +157,7 @@ CREATE TABLE [dbo].[Product](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[User]    Script Date: 18-04-2024 08:44:23 AM ******/
+/****** Object:  Table [dbo].[User]    Script Date: 19-04-2024 10:31:11 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -176,7 +179,7 @@ CREATE TABLE [dbo].[User](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  StoredProcedure [dbo].[sp_Cart_Details]    Script Date: 18-04-2024 08:44:23 AM ******/
+/****** Object:  StoredProcedure [dbo].[sp_Cart_Details]    Script Date: 19-04-2024 10:31:11 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -218,7 +221,7 @@ ELSE IF @sp_operation = 'DELETE'
  END    
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_Get_Order_Details]    Script Date: 18-04-2024 08:44:23 AM ******/
+/****** Object:  StoredProcedure [dbo].[sp_Get_Order_Details]    Script Date: 19-04-2024 10:31:11 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -234,7 +237,26 @@ BEGIN
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_Order_Completed]    Script Date: 18-04-2024 08:44:23 AM ******/
+/****** Object:  StoredProcedure [dbo].[sp_Get_User_Order_Details]    Script Date: 19-04-2024 10:31:11 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[sp_Get_User_Order_Details]  
+      
+@User_Id INT
+	   
+AS            
+BEGIN   
+  
+ SELECT P.Product_Name,P.Product_Price AS Price,C.Quantity, P.Product_Cover_Image FROM Cart AS C  
+ INNER JOIN [dbo].[Product] AS P ON P.Product_Id = C.Product_Id  
+ INNER JOIN [dbo].[User] AS U ON U.[User_Id] = C.[User_Id]
+ WHERE C.[User_Id] = @User_Id AND C.Is_Completed = 1
+  
+END
+GO
+/****** Object:  StoredProcedure [dbo].[sp_Order_Completed]    Script Date: 19-04-2024 10:31:11 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -248,7 +270,7 @@ BEGIN
         UPDATE dbo.[Cart] SET Is_Completed = 1 WHERE Cart_Id IN (SELECT value FROM string_split(@Cart_Ids, ','))
  END 
 GO
-/****** Object:  StoredProcedure [dbo].[sp_Product_Details]    Script Date: 18-04-2024 08:44:23 AM ******/
+/****** Object:  StoredProcedure [dbo].[sp_Product_Details]    Script Date: 19-04-2024 10:31:11 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -298,7 +320,7 @@ ELSE IF @sp_operation = 'GET'
 	END
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_UserDetails]    Script Date: 18-04-2024 08:44:23 AM ******/
+/****** Object:  StoredProcedure [dbo].[sp_UserDetails]    Script Date: 19-04-2024 10:31:11 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -346,7 +368,7 @@ ELSE IF @sp_operation = 'GET'
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_UserLogin]    Script Date: 18-04-2024 08:44:23 AM ******/
+/****** Object:  StoredProcedure [dbo].[sp_UserLogin]    Script Date: 19-04-2024 10:31:11 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -368,9 +390,5 @@ ALTER DATABASE [Product Management] SET  READ_WRITE
 GO
 
 
-
-
-USE [Product Management]
-
 INSERT INTO dbo.[User] (Firstname, Lastname, Birthdate, Gender, Email, Phonenumber, [Password], Is_Deleted,User_Type)    
-	  VALUES ('Kevin','Gadhiya','1994-02-07 00:00:00.000',1,'kevin.gadhiya@gmail.com','8569475861','123456', 0,1)
+	  VALUES ('kevin','gadhiya','2024-02-07 00:00:00.000',1,'kevin.gadhiya@gmail.com','9865896545','MTIzNDU2', 0,1) 

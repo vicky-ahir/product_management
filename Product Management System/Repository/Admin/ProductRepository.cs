@@ -345,5 +345,25 @@ namespace Product_Management_System.Repository.Admin
             }
         }
 
+
+        public async Task<IEnumerable<Cart>> GetUserOrder(int User_Id)
+        {
+            try
+            {
+                var parameter = new DynamicParameters();
+                parameter.Add("@User_Id", User_Id, DbType.String, ParameterDirection.Input);
+                using (IDbConnection connection = GetDbConnection())
+                {
+                    await ((DbConnection)connection).OpenAsync();
+                    var result = await connection.QueryAsync<Cart>("sp_Get_User_Order_Details", parameter, commandType: CommandType.StoredProcedure);
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
     }
 }

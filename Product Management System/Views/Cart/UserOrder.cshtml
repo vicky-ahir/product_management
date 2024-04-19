@@ -2,13 +2,7 @@
 @model IEnumerable<Product_Management_System.Models.Cart>
 
 @{
-    ViewData["Title"] = "Index";
-    List<int> cartIds = new List<int>();
-
-    foreach (var item in Model)
-    {
-        cartIds.Add(item.Cart_Id);
-    }
+    ViewData["Title"] = "User Order";
 }
 
 <link href="~/css/product.css" rel="stylesheet" />
@@ -61,7 +55,10 @@
 @if (Model == null || !Model.Any())
 {
     <div class="card p-md-5 text-center">
-        <p class="fw-bold" style="font-size:24px">Your cart is empty.</p>
+        <p class="fw-bold" style="font-size:24px">You don't have any item yet.</p>
+
+            <a class="btn btn-primary btn-lg" asp-action="Index" asp-controller="shop" style="width:200px !important;margin-left:42% !important;">Browse Products</a>
+ 
     </div>
 }
 else
@@ -72,29 +69,22 @@ else
             <div class="card mb-3">
                 <div class="card-body d-flex align-items-start">
                     <div class="cart_Image">
-                        <img src="@Url.Content(@item.Product_Cover_Image)" alt="Product Cover Image" width="300" height="200" />
+                        <img src="@Url.Content("~/" + @item.Product_Cover_Image)" alt="Product Cover Image" width="300" height="200" />
                     </div>
                     <div class="ms-5 mt-2">
                         <h5 class="card-title">@item.Product_Name</h5>
                         <p class="card-text" data-price="@item.Price"><span class="fw-bold">Price:</span> @item.Price</p>
                         <p class="card-text">
                             <span class="fw-bold">Quantity:</span>
-                            <button type="button" class="btn pb-1 btn-secondary" onclick="changeQuantity(@item.Cart_Id,-1,@item.Quantity)">-</button>&nbsp;&nbsp;
                             <span id="quantity" class="fw-bold">@item.Quantity</span>&nbsp;&nbsp;
-                            <button type="button" class="btn pb-1 btn-secondary" onclick="changeQuantity(@item.Cart_Id,1,@item.Quantity)">+</button>
                         </p>
                         <p class="card-text"><span class="fw-bold">Total:</span><span id="totalAmount"> @(item.Price * item.Quantity)</span></p>
-                        @* <a class="btn btn-buy"><i class="fa  fa-shopping-cart"></i> Buy Now</a> *@
                     </div>
-                    <button type="submit" class="btn btn-danger ms-auto" onclick="removeCart(@item.Cart_Id)">X</button>
                 </div>
             </div>
         }
     </div>
     <div class="d-flex justify-content-end">
-        <img src="~/Images/ezgif.com-gif-maker.gif" class="mx-2 order_gif" alt="Loading..." style="display:none;" />
-        <a class="btn btn-completed mx-2" style="display:none;"><i class=""></i> Completed ✅</a>
-        <a class="btn btn-proceedtobuy mx-2" onclick="proceedToBuy(@JsonConvert.SerializeObject(cartIds))"><i class="fa fa-shopping-cart"></i> Proceed to buy</a>
         <strong class="card p-4 pt-1 pb-1">Total: @Model.Sum(item => item.Price * item.Quantity)</strong>
     </div>
 }
@@ -144,7 +134,6 @@ else
                     setTimeout(function () {
                         document.getElementsByClassName('btn-completed')[0].style.display = 'block';
                         document.getElementsByClassName('order_gif')[0].style.display = 'none';
-                        window.location.reload();
                     }, 7000);
                 }
             },

@@ -52,6 +52,10 @@
     #decrement:active {
         box-shadow: inset 4px 5px 10px rgba(0, 0, 0, 0.5);
     }
+
+    .hide{
+        display:none;
+    }
 </style>
 
 @{
@@ -112,6 +116,7 @@
                             <input id="quantityInput" class="form-control" value="1" min="1" readonly>
                             <button id="increment" type="button" onclick="incrementQuantity()">+</button>
                         </div>
+                        <span class="hide mt-3 text-danger text-center" id="errorMessage">Product quantity cannot exceed available quantity.</span>
                     </div>
                     <div class="action-links d-flex justify-content-center mt-4">
                         <button class="btn btn-addCart" onclick="addToCart(@Model.Product_Id)"><i class="fa fa-solid fa-cart-plus"></i> Add to Cart</button>
@@ -132,7 +137,15 @@
 
     function incrementQuantity() {
         var quantityInput = document.getElementById('quantityInput');
-        quantityInput.value = parseInt(quantityInput.value) + 1;
+        if (@Model.Product_Quantity > parseInt(quantityInput.value)) {
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+        }
+        else{
+            document.getElementById("errorMessage").classList.remove("hide");
+            setTimeout(function () {
+                document.getElementById("errorMessage").classList.add("hide");
+            }, 3000);
+        }
     }
 
     function decrementQuantity() {

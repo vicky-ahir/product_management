@@ -67,5 +67,10 @@ namespace Product_Management_System.Services.Admin
         {
             return await _productRepository.GetAllOrders();
         }
+
+        public async Task<IEnumerable<Cart>> GetUserOrder(int User_Id)
+        {
+            return await _productRepository.GetUserOrder(User_Id);
+        }
     }
 }
