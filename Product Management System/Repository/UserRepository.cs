@@ -127,7 +127,7 @@ namespace Product_Management_System.Repository
                 encode = Encoding.UTF8.GetBytes(user.Password);
                 string Password = Convert.ToBase64String(encode);
 
-                parameter.Add("@Firstname", user.User_Id, DbType.String, ParameterDirection.Input);
+                parameter.Add("@User_Id", user.User_Id, DbType.String, ParameterDirection.Input);
                 parameter.Add("@Firstname", user.Firstname, DbType.String, ParameterDirection.Input);
                 parameter.Add("@Lastname", user.Lastname, DbType.String, ParameterDirection.Input);
                 parameter.Add("@Birthdate", Convert.ToDateTime(user.Birthdate).ToString("MM/dd/yyyy"), DbType.String, ParameterDirection.Input);

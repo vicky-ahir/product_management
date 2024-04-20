@@ -95,7 +95,7 @@ namespace Product_Management_System.Controllers.Admin
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int User_Id,User user)
+        public async Task<IActionResult> Edit(int Id,User user)
         {
             try
             {
@@ -103,9 +103,9 @@ namespace Product_Management_System.Controllers.Admin
                 {
                     return BadRequest(ModelState);
                 }
-                if (user == null && User_Id > 0)
+                if (user != null && Id > 0)
                 {
-                    user.User_Id = User_Id;
+                    user.User_Id = Id;
                     var result = await _userService.EditUserDetail(user);
                     if (result == false)
                     {

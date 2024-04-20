@@ -125,7 +125,7 @@ else if (!string.IsNullOrEmpty(ViewBag.success_message))
                             <div class="text-center text-lg-start mt-4 pt-2 d-flex flex-column">
                                 <div class="d-flex justify-content-center">
                                     <input type="submit" value="Save" class="btn btn-primary btnAddProduct" />
-                                    <button class="mx-2 btn btn-secondary btnBackProduct" asp-action="Index">Back to List</button>
+                                   <a class="mx-2 btn btn-secondary btnBackProduct" asp-action="Index">Back to List</a>
 
                                 </div>
                             </div>
@@ -145,8 +145,9 @@ else if (!string.IsNullOrEmpty(ViewBag.success_message))
             if (img === imgPath) {
                 imagePaths.splice(index, 1);
                 var updatedProductImages = imagePaths.join(',');
-                $('#Product_Images').val(updatedProductImages);
-                $('.image-container:eq(' + index + ')').remove();
+                var i = index + 1;
+                $('.image-container:eq(' + i + ')').remove();
+                $('#Product_Images').val(updatedProductImages);                
             }
         });
     }

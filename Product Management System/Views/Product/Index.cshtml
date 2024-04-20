@@ -79,7 +79,7 @@
                             <td style="border-bottom-right-radius:10px;border-top-right-radius:10px">
                                 <a asp-action="EditProduct" asp-route-id="@item.Product_Id" id="btnEdit" class="btn bg-white text-primary" title="Edit Product"><i class="fa fa-edit fw-bold"></i></a>
                                 <a asp-action="DetailProduct" asp-route-id="@item.Product_Id" id="btnView" class="btn bg-white" title="View Product"><i class="fa fa-eye fw-bold"></i></a>
-                                <a href="#" onclick="deleteProduct(@item.Product_Id)" id="btnDelete" class="btn bg-white text-primary" title="Delete Product"><i class="fa fa-trash fw-bold"></i></a>
+                                <a onclick="deleteProduct(@item.Product_Id)" id="btnDelete" class="btn bg-white text-primary" title="Delete Product"><i class="fa fa-trash fw-bold"></i></a>
                             </td>
                         </tr>
                     }

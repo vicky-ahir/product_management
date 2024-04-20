@@ -6,6 +6,46 @@
 
 <link href="~/css/admin.css" rel="stylesheet" />
 
+@if (!string.IsNullOrEmpty(ViewBag.error_message))
+{
+    <script>
+        $(document).ready(function () {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: '@ViewBag.error_message'
+            });
+        });
+    </script>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.success_message))
+{
+    <script>
+        $(document).ready(function () {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: '@ViewBag.success_message'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    var hostname = window.location.hostname;
+                    var port = window.location.port;
+
+                    var baseUrl = 'https://' + hostname;
+                    if (port) {
+                        baseUrl += ':' + port;
+                    }
+                    var finalUrl = baseUrl + '/Admin/Index';
+
+                    window.location.href = finalUrl;
+                }
+            });
+        });
+    </script>
+}
+
+
 <div class="main-content">
     <div class="main-content-inner">
         <div class="main-content-wrap">

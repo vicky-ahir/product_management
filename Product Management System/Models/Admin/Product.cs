@@ -11,10 +11,8 @@ namespace Product_Management_System.Models.Admin
         public string Product_Description { get; set; }
         [Required]
         public decimal Product_Price { get; set; }
-        [Required]
         public IFormFile? Cover_Image { get; set; }
         public string? Product_Cover_Image { get; set; }
-        [Required]
         public List<IFormFile>? Images { get; set; }
         public string? Product_Images { get; set; }
         [Required]
